@@ -5,6 +5,14 @@ import org.junit.jupiter.api.Test;
 public class TestFizzBuzz {
 
     @Test
+    void verifyIsNumberWhenValueIsNonMultipleAndNonContainsThreeAndFiveCharacter(){
+        int numberNonMultipleOfThreeOrFive = 1;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberNonMultipleOfThreeOrFive);
+        Assertions.assertEquals(numberNonMultipleOfThreeOrFive, result);
+    }
+
+    @Test
     void verifyIsFizzWhenNumberIsMultipleOfThree(){
         int numberMultipleOfThree = 3;
         FizzBuzz fizzBuzz = new FizzBuzz();
@@ -22,9 +30,9 @@ public class TestFizzBuzz {
 
     @Test
     void verifyNumberIsMultipleOfThreeAndFive(){
-        int numberNonMultipleOfFive = 15;
+        int numberMultipleOfFive = 15;
         FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberNonMultipleOfFive);
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfFive);
         Assertions.assertEquals("FizzBuzz", result);
     }
 
@@ -39,25 +47,25 @@ public class TestFizzBuzz {
 
     @Test
     void verifyIsFizzWhenNumberContainsCharacterThree(){
-        int numberMultipleOfThree = 32;
+        int numberContainingCharacterThree = 32;
         FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfThree);
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberContainingCharacterThree);
         Assertions.assertEquals("Fizz", result);
     }
 
     @Test
     void verifyIsBuzzWhenNumberContainsCharacterFive(){
-        int numberMultipleOfThree = 56;
+        int numberContainingCharacterFive = 56;
         FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfThree);
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberContainingCharacterFive);
         Assertions.assertEquals("Buzz", result);
     }
 
     @Test
     void verifyIsFizzBuzzWhenNumberContainsCharacterFiveAndThree(){
-        int numberMultipleOfThree = 35;
+        int numberContainingCharacterThreeAndFive = 35;
         FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfThree);
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberContainingCharacterThreeAndFive);
         Assertions.assertEquals("FizzBuzz", result);
     }
 
