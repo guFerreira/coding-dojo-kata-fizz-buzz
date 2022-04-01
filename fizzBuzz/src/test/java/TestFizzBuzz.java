@@ -9,7 +9,7 @@ public class TestFizzBuzz {
         int numberNonMultipleOfThreeOrFive = 1;
         FizzBuzz fizzBuzz = new FizzBuzz();
         String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberNonMultipleOfThreeOrFive);
-        Assertions.assertEquals(numberNonMultipleOfThreeOrFive, result);
+        Assertions.assertEquals(Integer.toString(numberNonMultipleOfThreeOrFive), result);
     }
 
     @Test
