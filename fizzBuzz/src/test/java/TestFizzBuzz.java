@@ -30,7 +30,7 @@ public class TestFizzBuzz {
         int numberMultipleOfFive = 5;
         FizzBuzz fizzBuzz = new FizzBuzz();
         String result = fizzBuzz.verifyNumberIsBuzz(numberMultipleOfFive);
-        Assertions.assertEquals("Fizz", result);
+        Assertions.assertEquals("Buzz", result);
     }
 
     @Test

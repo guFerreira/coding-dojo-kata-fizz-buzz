@@ -11,4 +11,13 @@ public class FizzBuzz {
         return number % 3 == 0;
     }
 
+    public String verifyNumberIsBuzz(int number){
+        if (this.verifyNumberIsMultipleOfFive(number))
+            return "Buzz";
+        return Integer.toString(number);
+    }
+
+    private boolean verifyNumberIsMultipleOfFive(int number){
+        return number % 5 == 0;
+    }
 }
