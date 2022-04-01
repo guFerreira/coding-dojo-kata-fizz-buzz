@@ -32,7 +32,7 @@ public class FizzBuzz {
             result += "Buzz";
         }
         if(result.equals(""))
-            Integer.toString(number);
+            result = Integer.toString(number);
 
         return result;
     }
