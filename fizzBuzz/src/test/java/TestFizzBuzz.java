@@ -36,4 +36,21 @@ public class TestFizzBuzz {
         Assertions.assertEquals(expectedListSize, fizzBuzz.getResults().size());
     }
 
+
+    @Test
+    void verifyIsFizzWhenNumberContainsCharacterThree(){
+        int numberMultipleOfThree = 32;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfThree);
+        Assertions.assertEquals("Fizz", result);
+    }
+
+    @Test
+    void verifyIsBuzzWhenNumberContainsCharacterFive(){
+        int numberMultipleOfThree = 53;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfThree);
+        Assertions.assertEquals("Buzz", result);
+    }
+
 }
