@@ -47,10 +47,26 @@ public class TestFizzBuzz {
 
     @Test
     void verifyIsBuzzWhenNumberContainsCharacterFive(){
-        int numberMultipleOfThree = 53;
+        int numberMultipleOfThree = 56;
         FizzBuzz fizzBuzz = new FizzBuzz();
         String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfThree);
         Assertions.assertEquals("Buzz", result);
+    }
+
+    @Test
+    void verifyIsFizzBuzzWhenNumberContainsCharacterFiveAndThree(){
+        int numberMultipleOfThree = 35;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfThree);
+        Assertions.assertEquals("FizzBuzz", result);
+    }
+
+    @Test
+    void verifyIsFizzBuzzWhenNumberIsNotMultipleOfThreeAndContainsCharacterFiveAndThree(){
+        int numberMultipleOfThree = 53;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(numberMultipleOfThree);
+        Assertions.assertEquals("FizzBuzz", result);
     }
 
 }
