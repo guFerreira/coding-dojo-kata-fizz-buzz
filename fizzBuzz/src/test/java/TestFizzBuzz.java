@@ -13,6 +13,7 @@ public class TestFizzBuzz {
         String result = fizzBuzz.verifyNumberIsFizz(numberMultipleOfThree);
         Assertions.assertEquals("Fizz", result);
     }
+
     @Test
     @DisplayName("Verificar se retorna o número de entrada como string quando" +
             " o número passado não for múltiplo de 3.")
@@ -21,6 +22,25 @@ public class TestFizzBuzz {
         FizzBuzz fizzBuzz = new FizzBuzz();
         String result = fizzBuzz.verifyNumberIsFizz(numberNonMultipleOfThree);
         Assertions.assertEquals(Integer.toString(numberNonMultipleOfThree), result);
+    }
+
+    @Test
+    @DisplayName("Verificar se retorna \"Buzz\" quando o número passado for múltiplo de 5.")
+    void verifyIsBuzzWhenNumberIsMultipleOfFive(){
+        int numberMultipleOfFive = 5;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.verifyNumberIsBuzz(numberMultipleOfFive);
+        Assertions.assertEquals("Fizz", result);
+    }
+
+    @Test
+    @DisplayName("Verificar se retorna o número de entrada como string quando" +
+            " o número passado não for múltiplo de 5.")
+    void verifyReturnIsNumberWhenEntryIsNotMultipleOfFive(){
+        int numberNonMultipleOfFive = 3;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String result = fizzBuzz.verifyNumberIsBuzz(numberNonMultipleOfFive);
+        Assertions.assertEquals(Integer.toString(numberNonMultipleOfFive), result);
     }
 
 }
