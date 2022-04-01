@@ -15,6 +15,7 @@ public class FizzBuzz {
     }
 
     private void generateResults(){
+        this.results = new ArrayList<>();
         for (int i = 1; i <= 100; i ++){
             this.results.add(this.convertNumberToFizzBuzzFormat(i));
         }
@@ -22,34 +23,38 @@ public class FizzBuzz {
 
     public String convertNumberToFizzBuzzFormat(int number){
         String result = "";
-        if(this.verifyNumberIsMultipleOfThree(number) && this.verifyNumberIsMultipleOfFive(number)) {
+        if(isMultipleForThreeAndFive(number)) {
             return "FizzBuzz";
-        }else if (this.verifyNumberIsMultipleOfThree(number)){
-            return "Fizz";
-        }else if (this.verifyNumberIsMultipleOfFive(number)){
-            return "Buzz";
         }
-        return Integer.toString(number);
+        if (this.isMultipleOfThree(number) || this.verifyNumberContainsCharacterThree(number)){
+            result += "Fizz";
+        }if (this.isMultipleOfFive(number) || this.verifyNumberContainsCharacterFive(number)){
+            result += "Buzz";
+        }
+        if(result.equals(""))
+            Integer.toString(number);
+
+        return result;
     }
 
-    private String verifyNumberIsFizz(int number){
-        if (this.verifyNumberIsMultipleOfThree(number))
-            return "Fizz";
-        return "";
+    private boolean isMultipleForThreeAndFive(int number){
+        return this.isMultipleOfThree(number) && this.isMultipleOfFive(number);
     }
 
-    private boolean verifyNumberIsMultipleOfThree(int number){
+    private boolean isMultipleOfThree(int number){
         return number % 3 == 0;
     }
 
-    private String verifyNumberIsBuzz(int number){
-        if (this.verifyNumberIsMultipleOfFive(number))
-            return "Buzz";
-        return "";
+    private boolean isMultipleOfFive(int number){
+        return number % 5 == 0;
     }
 
-    private boolean verifyNumberIsMultipleOfFive(int number){
-        return number % 5 == 0;
+    private boolean verifyNumberContainsCharacterFive(int number){
+        return Integer.toString(number).contains("5");
+    }
+
+    private boolean verifyNumberContainsCharacterThree(int number){
+        return Integer.toString(number).contains("3");
     }
 
     public List<String> getResults() {
