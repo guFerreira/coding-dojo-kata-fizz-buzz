@@ -21,7 +21,15 @@ public class FizzBuzz {
     }
 
     public String convertNumberToFizzBuzzFormat(int number){
-       return "";
+        String result = "";
+        if(this.verifyNumberIsMultipleOfThree(number) && this.verifyNumberIsMultipleOfFive(number)) {
+            return "FizzBuzz";
+        }else if (this.verifyNumberIsMultipleOfThree(number)){
+            return "Fizz";
+        }else if (this.verifyNumberIsMultipleOfFive(number)){
+            return "Buzz";
+        }
+        return Integer.toString(number);
     }
 
     private String verifyNumberIsFizz(int number){
