@@ -93,4 +93,12 @@ public class TestFizzBuzz {
         Assertions.assertEquals("FizzBuzz", result);
     }
 
+    @Test
+    void verifyConvertionWithNegativeNumber(){
+        int negativeNumber = -1;
+
+        String result = fizzBuzz.convertNumberToFizzBuzzFormat(negativeNumber);
+
+        Assertions.assertEquals(Integer.toString(negativeNumber), result);
+    }
 }

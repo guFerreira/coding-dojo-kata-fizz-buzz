@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FizzBuzz {
-
     private List<String> results = new ArrayList<>();
 
     public void printerResult(){
@@ -28,7 +27,8 @@ public class FizzBuzz {
         }
         if (this.isMultipleOfThree(number) || this.verifyNumberContainsCharacterThree(number)){
             result += "Fizz";
-        }if (this.isMultipleOfFive(number) || this.verifyNumberContainsCharacterFive(number)){
+        }
+        if (this.isMultipleOfFive(number) || this.verifyNumberContainsCharacterFive(number)){
             result += "Buzz";
         }
         if(result.equals(""))
